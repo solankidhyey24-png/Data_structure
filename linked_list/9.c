@@ -28,3 +28,11 @@ int main(){
     fourth->next = NULL;
 
     int value = 300;
+    node *temp = first; 
+    while(temp->next->data != value){
+         temp=temp->next; 
+    }
+    free(temp);
+    temp = first; 
+
+    
