@@ -1,3 +1,5 @@
+//delete the node with a given value
+
 #include <stdio.h>
 #include <stdlib.h>
 
