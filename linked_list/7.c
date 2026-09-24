@@ -1,3 +1,5 @@
+//delete the node at the end of list
+
 #include <stdio.h>
 #include <stdlib.h>
 
