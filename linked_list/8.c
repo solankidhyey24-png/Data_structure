@@ -28,17 +28,12 @@ int main(){
 
     int value = 300;
     node *temp = first;
-    node *previous = NULL;
 
-    while(temp != NULL && temp->data != value){
-        previous = temp;
+    while(temp->next->data != value){
         temp=temp->next;
     }
-    if(temp != NULL){
-        previous->next = temp->next;
-        free(temp);
-
-    }
+    temp->next=temp->next->next;
+    free(temp->next)
     
     
     temp = first;
