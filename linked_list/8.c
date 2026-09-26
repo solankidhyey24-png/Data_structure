@@ -29,20 +29,21 @@ int main(){
     int value = 300;
     node *temp = first;
 
-    while(temp->next->data != value){
+    while(temp->next != NULL && temp->next->data != value){
         temp=temp->next;
     }
-    temp->next=temp->next->next;
-    free(temp->next)
     
-    
+    if(temp != NULL){
+        node *del = temp->next;
+        temp->next = del->next;
+        free(del);
+        
+    }
+
     temp = first;
-
-
     while(temp != NULL){
         printf("%d\n", temp->data);
         temp=temp->next;
     }
-
     return 0;
 }

@@ -1,5 +1,4 @@
-//delete the node before a given value
-
+//delete node after a given value
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,30 +26,28 @@ int main(){
     third->next = fourth;
     fourth->next = NULL;
 
-    int value = 400;
-    node *temp = first; 
-    while(temp->next != NULL && temp->next->next != NULL && temp->next->next->data != value){
-         temp=temp->next; 
-    }
-
-    if(temp->next != NULL && temp->next->next != NULL){
+    int value = 300;
+    node *temp = first;
+    
+    while(temp != NULL && temp->data != value){
+        temp=temp->next;
+    };
+    if(temp != NULL && temp->next != NULL){
         node *del = temp->next;
         temp->next = del->next;
         free(del);
-
     }
+
     else{
-        printf("deletion not possible \n");
+        printf("there is node after the given value\n");
+
     };
-    
-    temp = first; 
+    temp = first;
 
     while(temp != NULL){
         printf("%d\n", temp->data);
         temp=temp->next;
-    }   
+    }
 
     return 0;
 }
-
-    
